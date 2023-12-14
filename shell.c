@@ -9,7 +9,7 @@
  * @argv: argument vector
  * Return: Always 0 (success)
  */
-int main( __attribute__((unused)) int argc, char **argv)
+int main(__attribute__((unused)) int argc, char **argv)
 {
 	char *command;
 

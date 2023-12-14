@@ -1,10 +1,9 @@
-#include "shell.h" 
+#include "shell.h"
 
 /**
- * execute_file - read from a ile 
+ * execute_file - read from a file
  * @cmd: line command
  * @ptr: file to be read from
- * @argv: vector
  * Return: nothing
  */
 
