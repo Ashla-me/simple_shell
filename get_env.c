@@ -13,7 +13,7 @@ char *_getenv(char *env_name)
 	char *item;
 
 	name_length = _strlen(env_name);
-	
+
 	for (i = 0; environ[i]; i++)
 	{
 		if (_strncmp(env_name, environ[i], name_length) == 0)
@@ -26,7 +26,7 @@ char *_getenv(char *env_name)
 				item[k] = environ[i][j];
 			}
 			item[k] = '\0';
-			
+
 			return (item);
 		}
 	}

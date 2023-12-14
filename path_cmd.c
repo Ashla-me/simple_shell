@@ -9,29 +9,30 @@
 
 int path_cmd(char **cmd)
 {
-        char *path;
-        char *direc;
-        char *command_path;
-        struct stat flip;
+	char *path;
+	char *direc;
+	char *command_path;
+	struct stat flip;
 
-        path = _getenv("PATH");
-        direc = strtok(path, ":");
+	path = _getenv("PATH");
+	direc = strtok(path, ":");
 
-        while (direc)
-        {
-                command_path = build_path(*cmd, direc);
-                if (stat(command_path, &flip) == 0)
-                {
-                        *cmd = _strdup(command_path);
-                        free(command_path);
-                        free(path);
-                        return (0);
-                }
+	while (direc)
+	{
+		command_path = build_path(*cmd, direc);
+		if (stat(command_path, &flip) == 0)
+		{
+			*cmd = _strdup(command_path);
+			free(command_path);
+			free(path);
 
-                free(command_path);
-                direc = strtok(NULL, ":");
-        }
-        free(path);
+			return (0);
+		}
 
-        return (1);
+		free(command_path);
+		direc = strtok(NULL, ":");
+	}
+	free(path);
+
+	return (1);
 }

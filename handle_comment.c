@@ -9,15 +9,14 @@
  */
 void handle_comment(char *buff)
 {
-        int z;
+	int z;
 
-        for (z = 0; buff[z] != '\0'; z++)
-        {
-                if (buff[z] == '#')
-                {
-                        buff[z] = '\0';
-                        break;
-                }
-
-        }
+	for (z = 0; buff[z] != '\0'; z++)
+	{
+		if (buff[z] == '#')
+		{
+			buff[z] = '\0';
+			break;
+		}
+	}
 }

@@ -36,5 +36,8 @@ char *build_path(char *cmd, char *dir);
 char *_strcat(char *destn, char *srce);
 int _isalpha(int c);
 int _atoi(char *str);
+void _read(char *file_name, char **argv);
+void execute_file(char *cmd, FILE *ptr);
+
 
 #endif

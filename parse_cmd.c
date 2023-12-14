@@ -9,30 +9,30 @@
 
 char **parse_cmd(char *content)
 {
-        char *token, **tok;
-        int i;
-        size_t buff_size;
+	char *token, **tok;
+	int i;
+	size_t buff_size;
 
-        buff_size = BUFSIZE;
+	buff_size = BUFSIZE;
 
-        if (content == NULL)
-                return (NULL);
+	if (content == NULL)
+		return (NULL);
 
-        tok = malloc(sizeof(char *) * buff_size);
-        if (tok == NULL)
-        {
-                perror("Error!");
-                return (NULL);
-        }
+	tok = malloc(sizeof(char *) * buff_size);
+	if (tok == NULL)
+	{
+		perror("Error!");
+		return (NULL);
+	}
 
-        token = strtok((char *)content, "\n ");
+	token = strtok((char *)content, "\n ");
 
-        for (i = 0; token; i++)
-        {
-                tok[i] = token;
-                token = strtok(NULL, "\n ");
-        }
-        tok[i] = NULL;
+	for (i = 0; token; i++)
+	{
+		tok[i] = token;
+		token = strtok(NULL, "\n ");
+	}
+	tok[i] = NULL;
 
-        return (tok);
+	return (tok);
 }

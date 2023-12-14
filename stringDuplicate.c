@@ -8,16 +8,16 @@
  */
 char *_strdup(char *str)
 {
-        char *duplicates;
-        size_t length;
+	char *duplicates;
+	size_t length;
 
-        length = _strlen(str) + 1;
-        duplicates = malloc(sizeof(char) * length);
+	length = _strlen(str) + 1;
+	duplicates = malloc(sizeof(char) * length);
 
-        if (duplicates != NULL)
-        {
-                _strcpy(duplicates, str);
-        }
+	if (duplicates != NULL)
+	{
+		_strcpy(duplicates, str);
+	}
 
-        return (duplicates);
+	return (duplicates);
 }

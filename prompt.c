@@ -6,7 +6,6 @@
  */
 
 void unveil_prompt(void)
-
 {
-        preshla_print("Pre-shla_Shell $ ");
+	preshla_print("Pre-shla_Shell $ ");
 }

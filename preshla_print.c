@@ -9,5 +9,5 @@
  */
 void preshla_print(const char *message)
 {
-        write(STDOUT_FILENO, message, strlen(message));
+	write(STDOUT_FILENO, message, strlen(message));
 }

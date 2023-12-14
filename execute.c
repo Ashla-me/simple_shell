@@ -9,37 +9,35 @@
 
 int execute_command(char **buffer, char *line)
 {
-        int ppid;
-        pid_t pid;
+	int ppid;
+	pid_t pid;
 
-        if (*buffer == NULL)
-        {
-                return (1);
-        }
+	if (*buffer == NULL)
+	{
+		return (1);
+	}
+	pid = fork();
 
-        pid = fork();
+	if (pid == -1)
+	{
+		perror("Error");
+		return (-1);
+	}
 
-        if (pid == -1)
-        {
-                perror("Error");
-                return (-1);
-        }
+	if (pid == 0)
+	{
+		path_cmd(buffer);
 
-        if (pid == 0)
-        {
-                path_cmd(buffer);
+		if (execve(*buffer, buffer, environ) == -1)
+		{
+			perror("execve: Error");
+			free(line);
+			free(buffer);
+			exit(1);
+		}
+		return (0);
+	}
+	wait(&ppid);
 
-                if (execve(*buffer, buffer, environ) == -1)
-                {
-                        perror("execve: Error");
-                        free(line);
-                        free(buffer);
-                        exit(1);
-                }
-                return (0);
-        }
-
-        wait(&ppid);
-
-        return (0);
+	return (0);
 }
