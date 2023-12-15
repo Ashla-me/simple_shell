@@ -21,7 +21,7 @@ void execute_cmmd(char *mn, char **argv)
 		perror(mn);
 		free(mn);
 		case_buffer(argv);
-		exit(1);
+		exit(98);
 	}
 	else
 		wait(&pid);
