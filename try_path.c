@@ -15,10 +15,10 @@ char *try_path(char **path, char *cmd)
 
 	while (path[n])
 	{
-		result = append_path(path[n], cmd);
+		result = _append(path[n], cmd);
 		if (access(result, F_OK | X_OK) == 0)
 			return (result);
-		free(output);
+		free(result);
 		n++;
 	}
 	return (NULL);

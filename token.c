@@ -2,7 +2,7 @@
 
 /**
 * token - creates tokens from given input
-* @line: to be tokenized
+* @zip: to be tokenized
 *
 * Return: array of strings
 */
@@ -13,7 +13,7 @@ char **token(char *zip)
 	int red = 1;
 	size_t blue = 0, flag = 0;
 
-	put = _strdup(line);
+	put = _strdup(zip);
 	if (!put)
 		return (NULL);
 	read = put;
@@ -33,8 +33,8 @@ char **token(char *zip)
 	token = strtok(put, delim);
 	while (token)
 	{
-		tokenize[index] = _strdup(token);
-		if (tokenize[index] == NULL)
+		tokenize[blue] = _strdup(token);
+		if (tokenize[blue] == NULL)
 		{
 			free(tokenize);
 			return (NULL);

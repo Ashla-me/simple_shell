@@ -16,7 +16,7 @@ int main(int argc, char **argv, char *envp[])
 	char **cmd = NULL, **pathway = NULL;
 	(void)envp, (void)argv;
 
-	if (ac < 1)
+	if (argc < 1)
 		return (-1);
 	signal(SIGINT, _signal);
 	while (1)
@@ -25,7 +25,7 @@ int main(int argc, char **argv, char *envp[])
 		case_buffer(pathway);
 		free(pathcmd);
 		unveil_prompt();
-		readsize = getline(&line, &sip_size, stdin);
+		readsize = getline(&read, &sip_size, stdin);
 		if (readsize < 0)
 			break;
 		info.ln_count++;
@@ -42,7 +42,7 @@ int main(int argc, char **argv, char *envp[])
 		if (!pathcmd)
 			perror(argv[0]);
 		else
-			execute_cmd(pathcmd, cmd);
+			execute_cmmd(pathcmd, cmd);
 	}
 	if (readsize < 0 && flags.interactive)
 		write(STDERR_FILENO, "\n", 1);

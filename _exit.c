@@ -10,6 +10,6 @@
 void exit_me(char **cmd, char *line)
 {
 	free(line);
-	free_buffers(cmd);
+	case_buffer(cmd);
 	exit(0);
 }

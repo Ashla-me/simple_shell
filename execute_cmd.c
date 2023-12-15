@@ -14,13 +14,13 @@ void execute_cmmd(char *mn, char **argv)
 
 	child_pid = fork();
 	if (child_pid < 0)
-		perror(cp);
+		perror(mn);
 	if (child_pid == 0)
 	{
 		execve(mn, argv, env);
 		perror(mn);
 		free(mn);
-		free_buffers(argv);
+		case_buffer(argv);
 		exit(1);
 	}
 	else

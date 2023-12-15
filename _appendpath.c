@@ -19,7 +19,7 @@ char *_append(char *path, char *cmd)
 	if (path == 0)
 		path = "";
 
-	buf = malloc(sizeof(char) * (_strlen(path) + _strlen(cmd) + 2));
+	sip = malloc(sizeof(char) * (_strlen(path) + _strlen(cmd) + 2));
 	if (!sip)
 		return (NULL);
 
@@ -39,6 +39,6 @@ char *_append(char *path, char *cmd)
 		sip[a + b] = cmd[b];
 		b++;
 	}
-	buf[a + b] = '\0';
+	sip[a + b] = '\0';
 	return (sip);
 }

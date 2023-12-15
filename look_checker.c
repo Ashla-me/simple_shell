@@ -9,9 +9,9 @@ int look_check(char **d, char *put)
 {
 	if (_builtin(d, put))
 		return (1);
-	else if (**cmd == '/')
+	else if (**d == '/')
 	{
-		execute_cmd(d[0], d);
+		execute_cmmd(d[0], d);
 		return (1);
 	}
 	return (0);

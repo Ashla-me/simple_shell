@@ -14,7 +14,7 @@ char *check_path(void)
 		if (_strncmp(*env, "PATH=", 5) == 0)
 		{
 			way = *env;
-			while (*way && x < 5)
+			while (*way && a < 5)
 			{
 				way++;
 				a++;

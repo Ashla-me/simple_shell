@@ -18,7 +18,20 @@ void exit_me(char **cmd, char *line);
 int look_check(char **d, char *put);
 char *check_path(void);
 void presh_env(void);
+extern __sighandler_t signal(int __sig, __sighandler_t __handler);
+struct builtin
+{
+        char *env;
+        char *exit;
+} builtin;
+
 int presh_print(char *p);
+
+struct flags
+{
+        bool interactive;
+} flags;
+
 char *_append(char *path, char *cmd);
 int _builtin(char **cmd, char *read);
 void case_buffer(char **sip);
@@ -34,24 +47,11 @@ int _strlen(char *i);
 int _strncmp(char *b1, char *b2, int i);
 char *_strdup(char *t);
 extern char **environ;
-extern __sighandler_t signal(int __sig, __sighandler_t __handler);
-
-/*struct files and commands*/
-struct builtin
-{
-	char *env;
-	char *exit;
-} builtin;
 
 struct info
 {
 	int final_exit;
 	int ln_count;
 } info;
-
-struct flags
-{
-	bool interactive;
-} flags;
 
 #endif
