@@ -6,7 +6,8 @@
  * @argv: vector
  * Return: success
  */
-void _read(char *filename, __attribute__((unused)) char **argv)
+
+void _read(char *filename, char **argv)
 {
 	FILE *ptr;
 	char *store = NULL;
@@ -21,7 +22,7 @@ void _read(char *filename, __attribute__((unused)) char **argv)
 	while ((getline(&store, &len, ptr)) != -1)
 	{
 
-		execute_file(store, ptr);
+		execute_file(store, ptr, argv);
 
 	}
 

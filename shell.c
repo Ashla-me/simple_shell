@@ -25,7 +25,7 @@ int main(__attribute__((unused)) int argc, char **argv)
 			unveil_prompt();
 		}
 		command = _getline();
-		execute_command(parse_cmd(command), command);
+		execute_command(parse_cmd(command), command, argv);
 	}
 	return (0);
 }

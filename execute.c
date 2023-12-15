@@ -4,10 +4,11 @@
  * execute_command - Execute a command using fork and execve.
  * @buffer: The command line to execute.
  * @line: The input command line.
+ * @argv: vector
  * Return: 0 on success, -1 on failure.
  */
 
-int execute_command(char **buffer, char *line)
+int execute_command(char **buffer, char *line, char **argv)
 {
 	int ppid;
 	pid_t pid;
@@ -20,7 +21,6 @@ int execute_command(char **buffer, char *line)
 
 	if (pid == -1)
 	{
-		perror("Error");
 		return (-1);
 	}
 
@@ -30,10 +30,10 @@ int execute_command(char **buffer, char *line)
 
 		if (execve(*buffer, buffer, environ) == -1)
 		{
-			perror("execve: Error");
+			preshla_print("argv[0]");
 			free(line);
 			free(buffer);
-			exit(1);
+			exit(EXIT_FAILURE);
 		}
 		return (0);
 	}
