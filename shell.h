@@ -19,17 +19,28 @@ int look_check(char **d, char *put);
 char *check_path(void);
 void presh_env(void);
 extern __sighandler_t signal(int __sig, __sighandler_t __handler);
+
+/**
+ * struct builtin - shows the environment and exit
+ * @env: environment
+ * @exit: leaves working envirnment
+ */
+
 struct builtin
+
 {
-        char *env;
-        char *exit;
+	char *env;
+	char *exit;
 } builtin;
 
 int presh_print(char *p);
-
+/**
+ * struct flags - displays the interactive mode
+ * @interactive: an environment
+ */
 struct flags
 {
-        bool interactive;
+	bool interactive;
 } flags;
 
 char *_append(char *path, char *cmd);
@@ -48,6 +59,11 @@ int _strncmp(char *b1, char *b2, int i);
 char *_strdup(char *t);
 extern char **environ;
 
+/**
+ * struct info - access one of the content of the struct
+ * @final_exit: access the exit command
+ * @ln_count: access length of count
+ */
 struct info
 {
 	int final_exit;
