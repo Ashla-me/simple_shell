@@ -8,7 +8,7 @@
 */
 char **token(char *zip)
 {
-	char *put = NULL, *read = NULL, *token = NULL, *delim = " :\t\r\n";
+	char *put = NULL, *read = NULL, *token = NULL, delim[] = {"\n "};
 	char **tokenize = NULL;
 	int red = 1;
 	size_t blue = 0, flag = 0;
