@@ -1,7 +1,7 @@
 #include "shell.h"
 
 /**
- * exit_first - exit Shell in file case
+ * exit_file - exit Shell in file case
  * @store: line of command
  * @cmd: parsed command
  * @ptr: the file stream

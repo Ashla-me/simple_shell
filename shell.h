@@ -17,7 +17,6 @@
 #define BUFSIZE 1024
 
 extern char **environ;
-
 int execute_command(char **buffer, char *line, char **argv);
 void unveil_prompt(void);
 void preshla_print(const char *content);
@@ -37,7 +36,7 @@ char *_strcat(char *destn, char *srce);
 int _isalpha(int c);
 int _atoi(char *str);
 void _read(char *file_name, char **argv);
-void execute_file(char *cmd, FILE *ptr, char **argiv);
+void execute_file(char *cmd, FILE *ptr, char **argv);
 void exit_file(char **cmd, char *store, FILE *ptr);
 
 

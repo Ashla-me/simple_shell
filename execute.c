@@ -30,7 +30,7 @@ int execute_command(char **buffer, char *line, char **argv)
 
 		if (execve(*buffer, buffer, environ) == -1)
 		{
-			preshla_print("argv[0]");
+			perror(argv[0]);
 			free(line);
 			free(buffer);
 			exit(EXIT_FAILURE);
