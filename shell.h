@@ -64,17 +64,6 @@ char *_strdup(char *t);
 extern char **environ;
 
 /**
- * struct builtin - contains a builtin string and related function
- * @type: the builtin command flag
- * @func: the function
- */
-typedef struct builtin
-{
-	char *type;
-	int (*func)(info_t *);
-} builtin_table;
-
-/**
  * struct info - access one of the content of the struct
  * @final_exit: access the exit command
  * @ln_count: access length of count
